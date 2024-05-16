@@ -1,0 +1,5 @@
+{
+    "wanted": [],
+    "banned": [".pyc", "deleted:", ".history", "__pycache__"],
+    "delete": ["modified:", "new file:"]
+}
