@@ -1,5 +1,5 @@
 {
     "wanted": [],
-    "banned": [".pyc", "deleted:", ".history", "__pycache__"],
+    "banned": [".pyc", "deleted:", ".history", "__pycache__", "Untracked", "git add", "git restore", "not staged"],
     "delete": ["modified:", "new file:"]
 }

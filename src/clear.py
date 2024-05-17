@@ -1,4 +1,5 @@
 from aggregator import aggregator
+import json
 
 class cleared:
 
@@ -15,7 +16,7 @@ class cleared:
     def __load_json(self, address: str):
 
         output = {}
-        with open(address, 'r') as file: output = file.readlines
+        with open(address, 'r') as file: output = json.load(file)
         self.__check_configuration(output)
 
         if output["wanted"] == []: output["wanted"] = ['']
