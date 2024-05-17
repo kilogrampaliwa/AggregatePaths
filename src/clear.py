@@ -1,13 +1,13 @@
-from aggregator import aggregator
+from .aggregator import aggregator
 import json
 
 class cleared:
 
-    def __init__(self, lines: list[dict], configuration_address: str = "configuration.json"):
+    def __init__(self, lines: list[dict], configuration_address: str = "src/configuration.json"):
 
         configuration = self.__load_json(configuration_address)
 
-        agg = aggregator.aggre(lines, configuration['banned'], configuration['wanted'], configuration['deleted'])
+        agg = aggregator.aggre(lines, configuration['banned'], configuration['wanted'], configuration['delete'])
 
         self.lines = agg.lines
         self.one_line = agg.one_line

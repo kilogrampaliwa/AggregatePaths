@@ -6,7 +6,7 @@ def main():
     def clean_empty_lines(lines: list[str]):  return [line for line in lines if line != []]
 
     raw_lines = []
-    new_lines = [['']]
+    new_lines = ['']
 
     with open("output.txt", 'r') as output: raw_lines = output.readlines()
 
@@ -14,10 +14,11 @@ def main():
 
     new_lines.append(processed.one_line)
     new_lines.append('\n\n')
-    new_lines.append(processed.lines)
+    for line in processed.lines: new_lines.append(line)
 
     with open("output.txt", 'w') as output:
-        for line in new_lines:  output.write(line)
+        for line in new_lines:
+            output.write(line+'\n')
 
 
 if __name__=='__main__':    main()
