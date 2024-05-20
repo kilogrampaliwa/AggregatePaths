@@ -13,10 +13,18 @@ def mock_open(monkeypatch, temp_output_file):
             raise FileNotFoundError
     monkeypatch.setattr("builtins.open", _mock_open)
 
-def test_run(mock_open, temp_output_file):
+def test_run(mock_open, temp_output_file, mock_config):
     main()
     
     with open(temp_output_file, 'r') as f:
         output = f.readlines()
     
-    assert output == ["line1line3 wanted\n", "\n", "line1", "line3 wanted"]
+    expected_output = [
+        "line1line2 bannedline3 wanted\n",
+        "\n\n",
+        "line1\n",
+        "line2 banned\n",
+        "line3 wanted\n"
+    ]
+    
+    assert output == expected_output
