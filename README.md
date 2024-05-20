@@ -1,8 +1,8 @@
- AggregatePaths
+ # AggregatePaths
 
- This application processes a text file (`output.txt`) by removing unwanted lines and words, adding desired lines, and then outputs the cleaned and formatted data. The configuration for these operations is specified in a JSON file (`configuration.json`). 
+ #### This application processes a text file (`output.txt`) by removing unwanted lines and words, adding desired lines, and then outputs the cleaned and formatted data. The configuration for these operations is specified in a JSON file (`configuration.json`). 
 
- Project Structure
+ ## Project Structure
 
  ```
  AggregatorAndCleanerApp/
@@ -17,7 +17,7 @@
  │       └── aggregator.py
  ```
 
- File Descriptions
+ ## File Descriptions
 
  - `run.py`: The main script to execute the application.
  - `output.txt`: The input file to be processed.
@@ -25,7 +25,7 @@
  - `src/configuration.json`: Contains the configuration for lines and words to be banned, wanted, and deleted.
  - `src/aggregator/aggregator.py`: Defines the `aggre` class which handles the core line processing logic.
 
- Usage
+ ## Usage
 
  1. **Prepare `output.txt`**: Place the content you want to process inside `output.txt`.
 
@@ -83,11 +83,27 @@
  - The `configuration.json` file should contain three keys: `wanted`, `banned`, and `delete`.
  - If any of these lists are empty, set them as `[""]` in the configuration file.
 
- License
+## Running Tests
+
+To run the tests, navigate to the project directory and use the following command:
+```bash
+pytest tests/
+```
+
+### Test Files
+
+- **tests/test_aggregator.py**: Tests for the `aggre` class in `aggregator.py`.
+- **tests/test_clear.py**: Tests for the `cleared` class in `clear.py`.
+- **tests/test_run.py**: Tests for the main script `run.py`.
+- **tests/conftest.py**: Contains fixtures and configurations used by the test files.
+
+## License
+
+ ### License
 
  This project is licensed under the GNU General Public License - see the LICENSE file for details.
 
- Contributing
+### Contributing
 
  1. Fork the repository.
  2. Create a new branch (`git checkout -b feature-branch`).
@@ -95,7 +111,7 @@
  4. Push to the branch (`git push origin feature-branch`).
  5. Create a new Pull Request.
 
- Contact
+ ### Contact
 
  For any inquiries or feedback, please contact [your-email@example.com].
 
